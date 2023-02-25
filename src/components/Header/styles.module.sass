@@ -1,5 +1,6 @@
 $squareWidth: 80px
 $gap: 8px
+$squareWidthMobile: 40px
 
 .header
     width: 360px
@@ -10,21 +11,32 @@ $gap: 8px
     justify-content: center
     align-items: center
     padding-left: 8px
+    @media (max-width: 480px)
+        width: 100%
+        padding: 0 24px
 
 .square
     width: $squareWidth
     height: $squareWidth
     background: #FF0000
     margin-right: $gap
+    @media (max-width: 480px)
+        width: $squareWidthMobile
+        height: $squareWidthMobile
 
 .circle
     width: calc($squareWidth * 1.06)
     height: calc($squareWidth * 1.06)
     background: #0000ff
     border-radius: 50%
+    @media (max-width: 480px)
+        width: calc($squareWidthMobile * 1.06)
+        height: calc($squareWidthMobile * 1.06)
 .triangle
     width: 0
     height: 0
     border-style: solid
     border-width: 0 calc($squareWidth * 1.06 * 1.15 / 2) calc($squareWidth * 1.06) calc($squareWidth * 1.06 * 1.15 / 2)
     border-color: transparent transparent #ffff00 transparent
+    @media (max-width: 480px)
+        border-width: 0 calc($squareWidthMobile * 1.06 * 1.15 / 2) calc($squareWidthMobile * 1.06) calc($squareWidthMobile * 1.06 * 1.15 / 2)

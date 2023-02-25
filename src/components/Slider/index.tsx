@@ -38,7 +38,7 @@ class ColorSlider extends Component<any, any> {
 
     return (
       <div className={styles.component}>
-        <div className={styles.fig}>fig. 1 — squircle</div>
+        <div className={styles.figLabel}>fig. 1 — squircle</div>
       <div className={styles.container}>
         <div className={styles.slider}>
           <Slider
@@ -56,7 +56,7 @@ class ColorSlider extends Component<any, any> {
           />
         </div>
         <div
-          className={styles.value}
+          className={styles.fig}
           style={{
             background: "rgba(" + valueA + ",0," + valueB + ", 1)",
             borderTopLeftRadius: borderValue + "%",
