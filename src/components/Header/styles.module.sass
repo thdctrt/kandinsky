@@ -1,0 +1,30 @@
+$squareWidth: 80px
+$gap: 8px
+
+.header
+    width: 360px
+    // height: 80px
+    display: flex
+    flex-direction: row
+    gap: $gap
+    justify-content: center
+    align-items: center
+    padding-left: 8px
+
+.square
+    width: $squareWidth
+    height: $squareWidth
+    background: #FF0000
+    margin-right: $gap
+
+.circle
+    width: calc($squareWidth * 1.06)
+    height: calc($squareWidth * 1.06)
+    background: #0000ff
+    border-radius: 50%
+.triangle
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 0 calc($squareWidth * 1.06 * 1.15 / 2) calc($squareWidth * 1.06) calc($squareWidth * 1.06 * 1.15 / 2)
+    border-color: transparent transparent #ffff00 transparent

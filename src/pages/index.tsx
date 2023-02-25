@@ -1,8 +1,9 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.sass";
-import ColorSlider from "@/components/Slider";
 import React, { useState } from "react";
-import NonLinearSlider from "@/components/RangeSlider";
+
+import ColorSlider from "@/components/Slider";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
@@ -14,6 +15,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        {/* <div
+          style={{
+            border: "1px solid red",
+            position: "absolute",
+            height: "100%",
+            margin: "0 auto",
+          }}
+        ></div> */}
+        <Header />
         <ColorSlider />
       </main>
     </>

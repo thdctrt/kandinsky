@@ -12,7 +12,7 @@ class ColorSlider extends Component<any, any> {
   }
 
   handleChangeStart = () => {
-    console.log("Change event started");
+    // console.log("Change event started");
   };
 
   handleChange = (value: any) => {
@@ -22,20 +22,23 @@ class ColorSlider extends Component<any, any> {
   };
 
   handleChangeComplete = () => {
-    console.log("Change event completed");
+    // console.log("Change event completed");
   };
 
   render() {
     const { value } = this.state;
-    const borderValue = (value / 510) * 50; // because border-radius: 50%
-    // const borderValueFast = ((255 - value) / 510) * 100;
+    const borderValue = (value / 510) * 100; // because border-radius: 50%
+    const borderValueSecond = ((value - 255) / 255) * 100;
     const valueA = value >= 255 ? 510 - value : 255;
     const valueB = value >= 255 ? 255 : value;
-    const percentValue = Math.round((value / 510) * 100);
-    // console.log("valueA is " + valueA);
+    let percentValue = Math.round((value / 510) * 100);
+    // console.log("border is " + borderValue);
+    // console.log("borderSecond is " + borderValueSecond);
     // console.log(value);
 
     return (
+      <div className={styles.component}>
+        <div className={styles.fig}>fig. 1 — squircle</div>
       <div className={styles.container}>
         <div className={styles.slider}>
           <Slider
@@ -45,7 +48,7 @@ class ColorSlider extends Component<any, any> {
             orientation="vertical"
             reverse={true}
             tooltip={false}
-            handleLabel={percentValue}
+            handleLabel={percentValue.toString()}
             onChangeStart={this.handleChangeStart}
             onChange={this.handleChange}
             onChangeComplete={this.handleChangeComplete}
@@ -59,35 +62,12 @@ class ColorSlider extends Component<any, any> {
             borderTopLeftRadius: borderValue + "%",
             borderTopRightRadius: borderValue + "%",
             borderBottomRightRadius:
-              borderValue > 25
-                ? borderValue + "%"
-                : borderValue > 20
-                ? borderValue / 2 + "%"
-                : borderValue > 15
-                ? borderValue / 2 + "%"
-                : borderValue > 12
-                ? borderValue / 5 + "%"
-                : borderValue > 6
-                ? borderValue / 10 + "%"
-                : 0,
-            // borderBottomRightRadius:
-            //   borderValue > 50
-            //     ? borderValueFast + "%"
-            //     : 0,
+              borderValue > 50 ? borderValueSecond + "%" : 0,
             borderBottomLeftRadius:
-              borderValue > 25
-                ? borderValue + "%"
-                : borderValue > 20
-                ? borderValue / 1.5 + "%"
-                : borderValue > 15
-                ? borderValue / 2 + "%"
-                : borderValue > 12
-                ? borderValue / 5 + "%"
-                : borderValue > 6
-                ? borderValue / 10 + "%"
-                : 0,
+              borderValue > 50 ? borderValueSecond + "%" : 0,
           }}
         ></div>
+      </div>
       </div>
     );
   }
