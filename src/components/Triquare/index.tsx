@@ -1,3 +1,5 @@
+"use client";
+
 import React, { Component } from "react";
 import Slider from "react-rangeslider";
 // import "react-rangeslider/lib/index.css";
@@ -33,12 +35,13 @@ class Triquare extends Component<any, any> {
     const valueA = (valueTri * 255) / 300;
 
     const SvgContainer = styled.svg<{ valueB: number }>`
-      fill: ${(props) => "rgba(255," + props.valueB + ", 0, 1)" || "125"};
+      fill: ${(props) =>
+        "rgba(255," + props.valueB + ", 0, 1)" || "rgba(255,128.35,0,1)"};
     `;
 
     return (
       <div className={styles.component}>
-        <div className={styles.figLabel}>fig. 1 — squircle</div>
+        <div className={styles.figLabel}>fig. 2 — triquare</div>
         <div className={styles.container}>
           <div className={styles.slider}>
             <Slider

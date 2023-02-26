@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 import ColorSlider from "@/components/Slider";
 import Header from "@/components/Header";
+import Triquare from "@/components/Triquare";
 
 export default function Home() {
   return (
@@ -15,16 +16,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        {/* <div
-          style={{
-            border: "1px solid red",
-            position: "absolute",
-            height: "100%",
-            margin: "0 auto",
-          }}
-        ></div> */}
+        <div className={styles.grid}>
+          <div className={styles.gridFirst}> </div>
+          <div className={styles.gridSecond}> </div>
+          <div className={styles.gridThird}> </div>
+          <div className={styles.gridFourth}> </div>
+        </div>
         <Header />
-        <ColorSlider />
+        <div className={styles.sliders}>
+          <ColorSlider />
+          <Triquare />
+        </div>
       </main>
     </>
   );
