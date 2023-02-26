@@ -3,10 +3,10 @@ import styles from "@/styles/Home.module.sass";
 import React, { useState } from "react";
 
 import ColorSlider from "@/components/Slider";
-import Header from "@/components/Header";
 import Triquare from "@/components/Triquare";
+import Header from "@/components/Header";
 
-export default function Home() {
+export default function Test() {
   return (
     <>
       <Head>
@@ -15,19 +15,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.grid}>
-          <div className={styles.gridFirst}> </div>
-          <div className={styles.gridSecond}> </div>
-          <div className={styles.gridThird}> </div>
-          <div className={styles.gridFourth}> </div>
-        </div>
-        <Header />
-        <div className={styles.sliders}>
-          <ColorSlider />
-          <Triquare />
-        </div>
+      <main className={styles.main} style={{background: "#cbcbcb"}}>
+        <Triquare />
       </main>
     </>
   );
 }
+
+

@@ -7,6 +7,44 @@
   min-height: 100vh
   background: #1e1e1e
   padding-top: 40px
+  user-select: none
   @media (max-width: 480px)
     gap: 80px
     padding-top: 24px
+
+.grid
+  position: absolute
+  width: 100%
+  height: 100vh
+  margin: 0 auto
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-template-rows: 1fr
+  grid-column-gap: 0px
+  grid-row-gap: 0px
+  margin-top: -40px
+  display: none
+
+.gridFirst
+  grid-area: 1 / 1 / 2 / 2
+  border-right: 1px solid red
+  border-left: 1px solid red
+.gridSecond
+  grid-area: 1 / 2 / 2 / 3
+  border-right: 1px solid red
+  border-left: 1px solid red
+.gridThird
+  grid-area: 1 / 3 / 2 / 4
+  border-right: 1px solid red
+  border-left: 1px solid red
+.gridFourth
+  grid-area: 1 / 4 / 2 / 5
+  border-right: 1px solid red
+  border-left: 1px solid red
+
+.sliders
+  display: flex
+  flex-direction: row
+  gap: 16px
+  justify-content: space-evenly
+  width: 50%
